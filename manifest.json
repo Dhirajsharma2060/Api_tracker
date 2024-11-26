@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "API Tracker",
+    "version": "1.0",
+    "description": "Keep track of important APIs and switch between them easily.",
+    "permissions": ["storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+  

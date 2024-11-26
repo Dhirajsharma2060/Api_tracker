@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All APIs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h3 {
+      text-align: center;
+    }
+    .api-item {
+      background: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h3>All APIs</h3>
+  <div id="apiList"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const apiList = document.getElementById("apiList");
+
+      // Load all APIs from Chrome storage
+      chrome.storage.local.get("apiLinks", function (result) {
+        const apiLinks = result.apiLinks || [];
+        apiLinks.forEach(apiData => {
+          const apiItem = document.createElement("div");
+          apiItem.classList.add("api-item");
+
+          // Add link and description
+          apiItem.innerHTML = `
+            <strong>${apiData.category}</strong><br>
+            <a href="${apiData.url}" target="_blank">${apiData.url}</a><br>
+            <p>${apiData.description}</p>
+          `;
+
+          apiList.appendChild(apiItem);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

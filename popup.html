@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Tracker</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 320px; /* Standard width for Chrome extension popups */
+      background-color: #f4f4f9; /* Light background for better aesthetics */
+    }
+
+    /* Header Styling */
+    h3 {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Search Bar */
+    #searchBar {
+      width: calc(100% - 20px); /* Padding for proper alignment */
+      padding: 8px;
+      margin: 10px auto;
+      display: block;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    /* API List Section */
+    #apiList {
+      margin: 10px auto;
+      max-height: 200px; /* Restrict height for scrollable list */
+      overflow-y: auto; /* Enable scrolling */
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    /* Individual API Items */
+    .api-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      margin-bottom: 5px;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .api-item div {
+      flex: 1;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .api-item button {
+      padding: 5px;
+      border: none;
+      background: #ff4d4d;
+      color: white;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .api-item button:hover {
+      background: #cc0000;
+    }
+
+    /* Add Section Styling */
+    #addSection {
+      margin: 15px auto;
+      padding: 10px;
+      background: #ffffff;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    #addSection h4 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Input Fields and Textarea */
+    input, textarea {
+      width: calc(100% - 20px);
+      margin: 5px auto;
+      padding: 8px;
+      display: block;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 60px;
+    }
+
+    /* Add Button */
+    #addApiBtn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      width: calc(100% - 20px);
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+    }
+
+    #addApiBtn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Scrollbar Styling */
+    #apiList::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    #apiList::-webkit-scrollbar-thumb {
+      background: #bbb;
+      border-radius: 5px;
+    }
+
+    #apiList::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    }
+  </style>
+</head>
+<body>
+  <h3>API Tracker</h3>
+
+  <!-- Search Bar -->
+  <input type="text" id="searchBar" placeholder="Search APIs...">
+
+  <!-- API List -->
+  <div id="apiList">
+    <!-- Dynamic API items will be added here -->
+  </div>
+
+  <!-- Add Section -->
+  <div id="addSection">
+    <h4>Add API</h4>
+    <input type="text" id="apiUrl" placeholder="API URL">
+    <input type="text" id="apiCategory" placeholder="Category">
+    <textarea id="apiDescription" placeholder="Description"></textarea>
+    <button id="addApiBtn">Add API</button>
+  </div>
+  <p style="text-align: center; font-size: 12px; color: gray;">Mark important APIs to save them</p>
+  <!-- <button id="showAllBtn" style="margin-top: 10px; width: 100%; background-color: #007bff; color: white; padding: 8px; border: none; border-radius: 5px;">Show All</button> -->
+
+
+  <script src="popup.js"></script>
+</body>
+</html>
